@@ -1,0 +1,141 @@
+drive link:https://docs.google.com/document/d/16vubrnUGytOFpZQC5mwCQLa7WmjRAyQpvG5Pl5zrFYE/edit?usp=sharing
+
+
+
+//Sum of elements in an array
+
+#include <iostream>
+using namespace std;
+int sumArray(int*arr,int size) {
+    int sum=0;
+    for (int i=0;i<size;i++) {
+        sum+= *(arr+i); 
+    }
+    return sum; 
+}
+int main() {
+    int arr[]={1,2,3,4,5};
+    int size=sizeof(arr)/sizeof(arr[0]); 
+    int totalSum=sumArray(arr, size);
+    cout<<totalSum<<endl;
+    return 0;
+}
+
+//min and max elements in an array
+#include <iostream>
+using namespace std;
+void findMinMax(int* arr, int size, int &min, int &max) {
+    min = *arr;
+    max = *arr;
+    for (int i = 1; i < size; i++) {
+        if (*(arr + i) < min) {
+            min = *(arr + i);
+        }
+        if (*(arr + i) > max) {
+            max = *(arr + i); 
+        }
+    }
+}
+int main() {
+    int arr[] = {10, 20, 5, 40, 15};
+    int size = sizeof(arr) / sizeof(arr[0]); 
+    int min, max; 
+    findMinMax(arr, size, min, max);
+    cout<<"Minimum element: "<<min<<endl;
+    cout<<"Maximum element: "<<max<<endl;
+    return 0;
+}
+
+//fibbonaci 
+#include <iostream>
+using namespace std;
+int fibb(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    else if(n==1)
+    {
+        return 1;
+    }
+    return fibb(n - 1) + fibb(n - 2);
+}
+int main() {
+    int n;
+    cin>>n;
+    int res=fibb(n);
+    cout<<res;
+    return 0;
+}
+
+//factorial
+#include <iostream>
+using namespace std;
+int fact(int n)
+{
+    if(n==0 || n==1)
+    {
+        return 1;
+    }
+    return n*fact(n - 1);
+}
+int main() {
+    int n;
+    cin>>n;
+    cout<<fact(n);
+    return 0;
+}
+
+//count the vowels in the string
+#include <iostream>
+using namespace std;
+int countVowels(char *str) {
+    int count = 0;
+    while (*str) {
+        if (*str == 'a' || *str == 'e' || *str == 'i' || *str == 'o' || *str == 'u' ||
+            *str == 'A' || *str == 'E' || *str == 'I' || *str == 'O' || *str == 'U') {
+            count++;
+        }
+        str++;
+    }
+    return count;
+}
+
+int main() {
+    char str[] = "Hello, World!";
+    cout<<countVowels(str);
+}
+
+
+//reverse the string
+#include <stdio.h>
+#include <string.h>
+
+void reverse(char *str) {
+    int n = strlen(str);
+    char *start = str;
+    char *end = str + n - 1;
+    while (start < end) {
+        char temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char str[] = "Hello";
+    reverse(str);
+    printf("Reversed string: %s\n", str);
+    return 0;
+}
+
+
+
+
+
+
+
+
